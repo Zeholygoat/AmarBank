@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suggester | AmarBank</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top:20px; }
+        .tile { border: 2px solid var(--gov-black); padding: 20px; cursor: pointer; }
+        .tile:hover { outline: 3px solid var(--gold); }
+        .result-card { border-top: 5px solid var(--emerald); padding: 20px; background: #fdfdfd; border: 1px solid #ddd; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<!-- (Include the same Header as index.html) -->
+<div class="gov-width">
+    <div class="main-container" id="app">
+        <!-- Your specific logic from the previous prompt goes here -->
+        <h1>Bank Selection Utility</h1>
+        <div id="view-1">
+            <p>Select your status:</p>
+            <div class="selection-grid">
+                <div class="tile" onclick="alert('Proceeding to Step 2...')"><h3>Student</h3></div>
+                <div class="tile" onclick="alert('Proceeding to Step 2...')"><h3>Professional</h3></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
