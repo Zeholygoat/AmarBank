@@ -2,30 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AmarBank | Bangladesh Financial Portal</title>
+    <title>AmarBank 2026 | The Ultimate Banking Comparison</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div class="gov-width">
-        <span style="color:white; font-weight:800; font-size:24px;">AMARBANK</span>
-    </div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="assess.html">Bank Suggester</a>
-        <a href="rates.html">Rates</a>
-        <a href="contact.html">Support</a>
-    </nav>
-</header>
+    <header class="gov-header">
+        <div class="gov-width nav-flex">
+            <span class="logo">AMAR<span>BANK</span></span>
+            <nav class="nav-links">
+                <a href="#compare">All 30 Banks</a>
+                <a href="#finder">Bank Finder</a>
+                <a href="#services">Card Services</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="gov-width">
-    <div class="main-container">
-        <span style="background:var(--gold); padding:5px 10px; font-weight:bold; font-size:12px;">OFFICIAL 2026 GUIDANCE</span>
-        <h1>Compare banking services in Bangladesh.</h1>
-        <p style="font-size:1.2rem; color:#505a5f;">Use this independent service to find accounts, cards, and investment rates tailored to your profile.</p>
-        <br>
-        <a href="assess.html" class="cta-button">Start Now —</a>
+    <div class="gov-width">
+        <section class="hero">
+            <h1>Comprehensive Banking Guidance 2026</h1>
+            <p>Access data for 30+ banks, 100+ features, and real-time ATM availability.</p>
+        </section>
+
+        <!-- SEARCH & FINDER -->
+        <section id="finder" class="panel">
+            <h2>Find Your Match</h2>
+            <div class="filter-group">
+                <label>I am a:</label>
+                <select id="userType" onchange="filterBanks()">
+                    <option value="all">Everyone</option>
+                    <option value="student">Student</option>
+                    <option value="pro">Salaried Professional</option>
+                    <option value="nrb">NRB (Non-Resident)</option>
+                    <option value="women">Woman Professional</option>
+                </select>
+            </div>
+            <div id="bankGrid" class="grid-container"></div>
+        </section>
+
+        <!-- FULL COMPARISON TABLE -->
+        <section id="compare" class="panel">
+            <h2>The 2026 Comparison Matrix</h2>
+            <div class="table-scroll">
+                <table id="fullTable">
+                    <thead>
+                        <tr>
+                            <th>Bank</th>
+                            <th>Best For</th>
+                            <th>ATM Network</th>
+                            <th>Mobile App</th>
+                            <th>Top Card Service</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
     </div>
-</div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
