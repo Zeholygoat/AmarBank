@@ -1,0 +1,64 @@
+:root {
+    --emerald: #006a4e;
+    --deep-emerald: #00523d;
+    --gov-black: #0b0c0c;
+    --gov-grey: #f3f2f1;
+    --gov-border: #b1b4b6;
+    --gold: #ffdd00;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "GDS Transport", Arial, sans-serif;
+    background-color: var(--gov-grey);
+    color: var(--gov-black);
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #000;
+    padding: 10px 5%;
+    border-bottom: 10px solid var(--emerald);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-links a:hover { text-decoration: underline; color: var(--gold); }
+
+.gov-width { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+.main-container {
+    background: var(--white);
+    margin: 40px auto;
+    padding: 40px;
+    border: 1px solid var(--gov-border);
+}
+
+h1 { font-size: 38px; letter-spacing: -1px; margin-top: 0; }
+
+.cta-button {
+    background: #00703c;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 4px solid #002d18;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover { background: var(--deep-emerald); }
+
+footer { background: #1d1d1d; color: #fff; padding: 40px 0; text-align: center; font-size: 13px; }
