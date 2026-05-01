@@ -2,64 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AmarBank 2026 | The Ultimate Banking Comparison</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmarBank | Official UKVI Emerald Portal 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="gov-header">
         <div class="gov-width nav-flex">
             <span class="logo">AMAR<span>BANK</span></span>
-            <nav class="nav-links">
-                <a href="#compare">All 30 Banks</a>
-                <a href="#finder">Bank Finder</a>
-                <a href="#services">Card Services</a>
+            <nav>
+                <a href="#wizard">Smart Suggester</a>
+                <a href="#compare">Comparison Matrix</a>
+                <a href="#rates">Market Rates</a>
             </nav>
         </div>
     </header>
 
-    <div class="gov-width">
-        <section class="hero">
-            <h1>Comprehensive Banking Guidance 2026</h1>
-            <p>Access data for 30+ banks, 100+ features, and real-time ATM availability.</p>
+    <main class="gov-width">
+        <!-- Hero Section -->
+        <section class="hero-box">
+            <span class="phase-tag">OFFICIAL 2026 GUIDANCE</span>
+            <h1>Choose the right bank for your needs</h1>
+            <p>Use our independent discovery tool to find accounts, cards, and investment rates from 30+ scheduled banks in Bangladesh.</p>
         </section>
 
-        <!-- SEARCH & FINDER -->
-        <section id="finder" class="panel">
-            <h2>Find Your Match</h2>
-            <div class="filter-group">
-                <label>I am a:</label>
-                <select id="userType" onchange="filterBanks()">
-                    <option value="all">Everyone</option>
-                    <option value="student">Student</option>
-                    <option value="pro">Salaried Professional</option>
-                    <option value="nrb">NRB (Non-Resident)</option>
-                    <option value="women">Woman Professional</option>
-                </select>
+        <!-- DIAGNOSTIC WIZARD -->
+        <section id="wizard" class="white-panel">
+            <div id="step-ui">
+                <h2 id="step-title">1. What is your primary role?</h2>
+                <div id="options-grid" class="grid-2">
+                    <!-- Options injected by JS -->
+                </div>
             </div>
-            <div id="bankGrid" class="grid-container"></div>
+            
+            <!-- Result Container (Hidden by default) -->
+            <div id="result-ui" class="hidden">
+                <div class="success-banner">
+                    <h2>We found the best matches for your profile</h2>
+                </div>
+                <div id="result-list"></div>
+                <button onclick="location.reload()" class="gov-button secondary">Restart Suggester</button>
+            </div>
         </section>
 
-        <!-- FULL COMPARISON TABLE -->
-        <section id="compare" class="panel">
-            <h2>The 2026 Comparison Matrix</h2>
+        <!-- MARKET RATES TABLE -->
+        <section id="rates" class="white-panel">
+            <h2>Live Market Rates (May 2026)</h2>
             <div class="table-scroll">
-                <table id="fullTable">
+                <table>
                     <thead>
                         <tr>
-                            <th>Bank</th>
+                            <th>Bank Name</th>
+                            <th>Savings (p.a.)</th>
+                            <th>FDR (1-Year)</th>
                             <th>Best For</th>
-                            <th>ATM Network</th>
-                            <th>Mobile App</th>
-                            <th>Top Card Service</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody id="rates-table-body"></tbody>
                 </table>
             </div>
         </section>
-    </div>
+    </main>
 
-    <script src="data.js"></script>
+    <footer>
+        <div class="gov-width">
+            <p>AmarBank | Built for comprehensive financial transparency. May 2026 Edition.</p>
+        </div>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
