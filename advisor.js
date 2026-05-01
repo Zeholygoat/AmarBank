@@ -19,10 +19,10 @@ let res = document.getElementById("result");
 res.innerHTML = "<h2>Recommendations</h2>";
 
 ranked.forEach(b=>{
-res.innerHTML += `<div class="card">
+res.innerHTML += `
+<div class="card">
 <h3>${b.name}</h3>
-<p>Score: ${b.score.toFixed(2)}</p>
+<p><strong>Score:</strong> ${b.score.toFixed(2)}</p>
+<p><strong>Best For:</strong> ${b.bestFor}</p>
 <ul>${b.reasons.map(r=>"<li>"+r+"</li>").join("")}</ul>
 </div>`;
-});
-}
