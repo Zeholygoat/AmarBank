@@ -1,0 +1,10 @@
+
+body {font-family:Arial; margin:0; background:#f3f2f1;}
+.header {background:#00703c; color:white; padding:15px;}
+.container {max-width:1000px; margin:auto; padding:20px;}
+.hero {margin:20px 0;}
+.card {background:white; padding:15px; margin:10px 0; border-left:5px solid #00703c;}
+table {width:100%; border-collapse:collapse;}
+td,th {border:1px solid #ccc; padding:10px;}
+button {background:#00703c; color:white; padding:10px; border:none; cursor:pointer;}
+footer {text-align:center; padding:20px;}
