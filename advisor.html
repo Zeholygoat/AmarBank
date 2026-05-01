@@ -1,13 +1,30 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Smart Advisor</title>
+<title>Advisor</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="header"><h1>Smart Advisor</h1></header>
+
+<header class="header">
+<div class="container nav">
+<h2>AmarBank</h2>
+<nav>
+<a href="index.html">Home</a>
+<a href="compare.html">Compare</a>
+<a href="insights.html">Insights</a>
+</nav>
+</div>
+</header>
+
 <main class="container">
+
+<div class="progress"><div id="bar" class="progress-bar"></div></div>
+
+<div class="card">
+<h3>Smart Advisor</h3>
+
 <select id="role">
 <option value="student">Student</option>
 <option value="pro">Professional</option>
@@ -16,17 +33,20 @@
 
 <select id="priority">
 <option value="interest">High Interest</option>
-<option value="tech">Technology</option>
+<option value="tech">Tech</option>
 <option value="cards">Cards</option>
 </select>
 
-<input id="deposit" placeholder="Deposit Amount">
-
 <button onclick="run()">Analyze</button>
+</div>
 
-<div id="result"></div>
+<div id="results"></div>
+
 </main>
+
 <footer>Created by Sadab</footer>
+
 <script type="module" src="advisor.js"></script>
+
 </body>
 </html>
