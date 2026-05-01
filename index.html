@@ -2,288 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmarBank | The Definitive Bangladesh Financial Portal</title>
-    <style>
-        :root {
-            --emerald: #006a4e;
-            --deep-emerald: #00523d;
-            --gov-black: #0b0c0c;
-            --gov-grey: #f3f2f1;
-            --gov-border: #b1b4b6;
-            --gold: #ffdd00;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: "GDS Transport", Arial, sans-serif;
-            background-color: var(--gov-grey);
-            color: var(--gov-black);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #000;
-            padding: 15px 5%;
-            border-bottom: 10px solid var(--emerald);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .gov-width { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .logo { color: #fff; font-size: 28px; font-weight: 800; letter-spacing: -1px; }
-
-        .main-container {
-            background: var(--white);
-            margin: 40px auto;
-            padding: 60px;
-            border: 1px solid var(--gov-border);
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-        }
-
-        h1 { font-size: 44px; margin-bottom: 10px; letter-spacing: -1.5px; }
-        .tagline { font-size: 20px; color: #505a5f; margin-bottom: 40px; border-left: 5px solid var(--emerald); padding-left: 15px; }
-
-        /* Grid System */
-        .selection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .tile {
-            border: 2px solid var(--gov-black);
-            padding: 25px;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            background: #fff;
-        }
-
-        .tile:hover {
-            outline: 4px solid var(--gold);
-            background: var(--gov-grey);
-            transform: translateY(-3px);
-        }
-
-        .tile.selected { background: var(--emerald); color: #fff; border-color: var(--emerald); }
-
-        /* Feature Badge System */
-        .badge {
-            display: inline-block;
-            background: var(--gov-grey);
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            margin: 3px;
-            border: 1px solid var(--gov-border);
-        }
-
-        .cta-button {
-            background: #00703c;
-            color: #fff;
-            padding: 18px 40px;
-            font-size: 20px;
-            font-weight: bold;
-            border: none;
-            border-bottom: 4px solid #002d18;
-            cursor: pointer;
-        }
-
-        .result-card {
-            border: 1px solid var(--gov-border);
-            border-top: 8px solid var(--emerald);
-            padding: 35px;
-            margin-bottom: 25px;
-            background: #fdfdfd;
-        }
-
-        .utility-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 14px;
-        }
-
-        .utility-table td { padding: 10px; border-bottom: 1px solid #eee; }
-        .utility-table font-weight-bold { color: var(--emerald); }
-
-        footer { background: #1d1d1d; color: #fff; padding: 60px 0; text-align: center; }
-    </style>
+    <title>AmarBank | Bangladesh Financial Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
-    <div class="gov-width"><span class="logo">AMARBANK</span></div>
+    <div class="gov-width">
+        <span style="color:white; font-weight:800; font-size:24px;">AMARBANK</span>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="assess.html">Bank Suggester</a>
+        <a href="rates.html">Rates</a>
+        <a href="contact.html">Support</a>
+    </nav>
 </header>
 
 <div class="gov-width">
     <div class="main-container">
-        <div id="app">
-            
-            <!-- STEP 1 -->
-            <div id="view-1" class="step">
-                <h1>Financial Identity</h1>
-                <p class="tagline">Select your primary status to filter the Bangladesh Banking Directory 2026.</p>
-                <div class="selection-grid">
-                    <div class="tile" onclick="save('tier', 'student', 1)"><h3>Student</h3><p>Age 18-30, low fees.</p></div>
-                    <div class="tile" onclick="save('tier', 'salaried', 1)"><h3>Professional</h3><p>Cards & Multi-currency.</p></div>
-                    <div class="tile" onclick="save('tier', 'business', 1)"><h3>Business</h3><p>LC, Loans, SME.</p></div>
-                    <div class="tile" onclick="save('tier', 'nrb', 1)"><h3>Expat / NRB</h3><p>Remittance focused.</p></div>
-                </div>
-            </div>
-
-            <!-- STEP 2 -->
-            <div id="view-2" class="step" style="display:none;">
-                <h1>Core Requirement</h1>
-                <p class="tagline">What is the most important feature for you today?</p>
-                <div class="selection-grid">
-                    <div class="tile" onclick="save('need', 'digital', 2)"><h3>Digital Banking</h3><p>Best Mobile Apps.</p></div>
-                    <div class="tile" onclick="save('need', 'islamic', 2)"><h3>Islamic</h3><p>Shariah-Compliant.</p></div>
-                    <div class="tile" onclick="save('need', 'physical', 2)"><h3>Branches/ATM</h3><p>Physical Presence.</p></div>
-                    <div class="tile" onclick="save('need', 'cards', 2)"><h3>Credit Cards</h3><p>Rewards & Lounge.</p></div>
-                </div>
-            </div>
-
-            <!-- RESULTS -->
-            <div id="results" class="step" style="display:none;">
-                <h1>Professional Recommendations</h1>
-                <div id="output"></div>
-                <button class="cta-button" onclick="location.reload()" style="background:#0b0c0c">Restart Assessment</button>
-            </div>
-
-        </div>
+        <span style="background:var(--gold); padding:5px 10px; font-weight:bold; font-size:12px;">OFFICIAL 2026 GUIDANCE</span>
+        <h1>Compare banking services in Bangladesh.</h1>
+        <p style="font-size:1.2rem; color:#505a5f;">Use this independent service to find accounts, cards, and investment rates tailored to your profile.</p>
+        <br>
+        <a href="assess.html" class="cta-button">Start Now —</a>
     </div>
 </div>
-
-<footer>
-    <p>Official 2026 Financial Selection Utility | Government Design Standard</p>
-    <p style="opacity:0.5; font-size:12px; margin-top:20px;">System Engineered by <strong>SADAB</strong></p>
-</footer>
-
-<script>
-    const user = { tier: '', need: '' };
-
-    const bankVault = [
-        { 
-            name: "Standard Chartered BD", 
-            tiers: ["salaried", "business"], 
-            needs: ["digital", "cards"], 
-            account: "Smart Account / Saadiq", 
-            card: "Visa Signature / Platinum",
-            benefits: ["Global Lounge Access", "Best International Support", "Priority Banking"],
-            atms: "Premium ATM Lounges in Metro areas"
-        },
-        { 
-            name: "Dutch-Bangla Bank (DBBL)", 
-            tiers: ["student", "salaried", "nrb"], 
-            needs: ["physical", "digital"], 
-            account: "Savings / Student Account", 
-            card: "Nexus Debit / VIP Credit",
-            benefits: ["Largest ATM Grid", "NexusPay QR App", "Agent Banking everywhere"],
-            atms: "5000+ ATMs nationwide"
-        },
-        { 
-            name: "City Bank", 
-            tiers: ["business", "salaried"], 
-            needs: ["digital", "cards"], 
-            account: "High Value Savings", 
-            card: "American Express (Amex) Gold",
-            benefits: ["B1G1 Dining", "CityTouch (Top Rated App)", "Priority Service"],
-            atms: "Real-time Cash Deposit Machines"
-        },
-        { 
-            name: "Islami Bank (IBBL)", 
-            tiers: ["nrb", "business", "salaried"], 
-            needs: ["islamic", "physical"], 
-            account: "Mudaraba Savings", 
-            card: "Khidmah Credit Card",
-            benefits: ["100% Shariah Compliant", "CellFin Ecosystem", "Top for Remittance"],
-            atms: "Extensive rural ATM coverage"
-        },
-        { 
-            name: "BRAC Bank", 
-            tiers: ["student", "business"], 
-            needs: ["digital", "cards"], 
-            account: "Agami (Student) / Future Star", 
-            card: "TARA (Women) / Visa Platinum",
-            benefits: ["Astha App Excellence", "SME Specialist", "No hidden charges"],
-            atms: "NPSB & RTGS Integrated"
-        },
-        { 
-            name: "Eastern Bank (EBL)", 
-            tiers: ["salaried", "business"], 
-            needs: ["cards", "digital"], 
-            account: "EBL Power Savings", 
-            card: "Aqua Prepaid / Visa Infinite",
-            benefits: ["Skybanking App", "Best Travel Cards", "Zero Renewal Fee Perks"],
-            atms: "Dual-currency enabled ATMs"
-        },
-        { 
-            name: "Mutual Trust Bank (MTB)", 
-            tiers: ["student", "salaried"], 
-            needs: ["digital", "physical"], 
-            account: "MTB Graduate Account", 
-            card: "Mastercard World",
-            benefits: ["Air-conditioned ATM Lounges", "MTB Neo App", "Insurance Coverage"],
-            atms: "Smart Banking Booths"
-        },
-        { 
-            name: "One Bank", 
-            tiers: ["student", "nrb"], 
-            needs: ["digital"], 
-            account: "Youth Banking", 
-            card: "OBL Visa Debit",
-            benefits: ["Attractive Youth Interest", "Discount at Restaurants", "OBL Click App"],
-            atms: "Easy Cash Out via bKash"
-        }
-    ];
-
-    function save(key, val, step) {
-        user[key] = val;
-        document.querySelectorAll(`#view-${step} .tile`).forEach(t => t.classList.remove('selected'));
-        event.currentTarget.classList.add('selected');
-        setTimeout(() => {
-            if(step === 1) show(2);
-            else if(step === 2) finalize();
-        }, 300);
-    }
-
-    function show(s) {
-        document.querySelectorAll('.step').forEach(v => v.style.display = 'none');
-        document.getElementById('view-' + s).style.display = 'block';
-    }
-
-    function finalize() {
-        document.querySelectorAll('.step').forEach(v => v.style.display = 'none');
-        document.getElementById('results').style.display = 'block';
-        
-        const matches = bankVault.filter(b => b.tiers.includes(user.tier) || b.needs.includes(user.need));
-        const out = document.getElementById('output');
-
-        out.innerHTML = matches.slice(0, 4).map(bank => `
-            <div class="result-card">
-                <div style="font-size:12px; font-weight:bold; color:var(--emerald);">RECOMMENDED FOR YOU</div>
-                <h2 style="margin:5px 0 20px 0; font-size:32px;">${bank.name}</h2>
-                
-                <table class="utility-table">
-                    <tr><td><strong>Primary Account:</strong></td><td>${bank.account}</td></tr>
-                    <tr><td><strong>Top Card:</strong></td><td>${bank.card}</td></tr>
-                    <tr><td><strong>ATM Network:</strong></td><td>${bank.atms}</td></tr>
-                </table>
-
-                <div style="margin:20px 0;">
-                    ${bank.benefits.map(b => `<span class="badge">${b}</span>`).join('')}
-                </div>
-                
-                <p style="font-size:14px; color:#666;">This selection offers high utility for <strong>${user.tier}</strong> profiles seeking <strong>${user.need}</strong> solutions in the 2026 market.</p>
-                <button class="cta-button" style="font-size:14px; padding:10px 20px;" onclick="window.open('https://www.google.com/search?q=${bank.name}+Bangladesh+official+site')">Open Official Portal</button>
-            </div>
-        `).join('');
-    }
-</script>
-
 </body>
 </html>
