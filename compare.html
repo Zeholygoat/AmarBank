@@ -1,16 +1,39 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comparison Matrix</title>
+<title>Compare</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="header"><h1>Comparison Matrix</h1></header>
+
+<header class="header">
+<div class="container"><h2>Comparison Matrix</h2></div>
+</header>
+
 <main class="container">
-<table id="table"></table>
+<table id="t"></table>
 </main>
+
+<script type="module">
+import {banks} from './data.js';
+
+let t=document.getElementById("t");
+
+t.innerHTML="<tr><th>Bank</th><th>FDR</th><th>Tech</th><th>Cards</th><th>ATM</th></tr>";
+
+banks.forEach(b=>{
+t.innerHTML+=`<tr>
+<td>${b.name}</td>
+<td>${b.fdr}%</td>
+<td>${b.tech}</td>
+<td>${b.cards}</td>
+<td>${b.atm}</td>
+</tr>`;
+});
+</script>
+
 <footer>Created by Sadab</footer>
-<script type="module" src="compare.js"></script>
+
 </body>
 </html>
