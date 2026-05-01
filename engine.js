@@ -1,26 +1,12 @@
-
-export function score(bank, user){
+export function score(bank,user){
 let s = 0;
 
-if(bank.type.includes(user.role)) s += 3;
-s += bank.fdr;
+if(bank.type.includes(user.role) || bank.type.includes("all")) s+=3;
 
-if(user.priority === "tech") s += bank.tech;
-if(user.priority === "cards") s += bank.cards;
-if(user.priority === "interest") s += bank.fdr;
+s += bank.fdr * 2;
 
-if(user.deposit > 500000) s += 2;
+if(user.priority==="tech") s += bank.tech * 1.5;
+if(user.priority==="cards") s += bank.cards * 1.5;
 
 return s;
-}
-
-export function explain(bank, user){
-let reasons = [];
-
-if(bank.type.includes(user.role)) reasons.push("Matches your profile");
-if(user.priority === "tech") reasons.push("Strong technology offering");
-if(user.priority === "cards") reasons.push("Strong card benefits");
-if(user.priority === "interest") reasons.push("High interest returns");
-
-return reasons;
 }
