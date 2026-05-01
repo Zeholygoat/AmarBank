@@ -1,17 +1,35 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>Insights</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="header"><h1>Market Insights</h1></header>
+
+<header class="header">
+<div class="container"><h2>Market Insights</h2></div>
+</header>
+
 <main class="container">
-<canvas id="chart"></canvas>
-<p id="stats"></p>
+<canvas id="c"></canvas>
 </main>
+
+<script type="module">
+import {banks} from './data.js';
+
+let c=document.getElementById("c");
+let ctx=c.getContext("2d");
+
+c.width=800;
+c.height=300;
+
+banks.forEach((b,i)=>{
+ctx.fillRect(i*25,300-b.fdr*20,20,b.fdr*20);
+});
+</script>
+
 <footer>Created by Sadab</footer>
-<script type="module" src="insights.js"></script>
+
 </body>
 </html>
