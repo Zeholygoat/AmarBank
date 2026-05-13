@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Insights</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="header">
-<div class="container"><h2>Market Insights</h2></div>
-</header>
-
 <main class="container">
-<canvas id="c"></canvas>
+<h2 class="section-title">Market Intelligence Dashboard</h2>
+<p class="section-sub">
+Visual analytics of Bangladesh banking performance.
+</p>
+<div class="card">
+<canvas id="chart"></canvas>
+</div>
+<div class="grid">
+<div class="card">
+<h3>Top FDR Rate</h3>
+<p class="ai-score">10.7%</p>
+</div>
+<div class="card">
+<h3>Average Industry FDR</h3>
+<p class="ai-score" id="stats"></p>
+</div>
+<div class="card">
+<h3>Digital Leaders</h3>
+<p>City Bank, EBL, MTB</p>
+  </div>
+</div>
 </main>
-
-<script type="module">
-import {banks} from './data.js';
-
-let c=document.getElementById("c");
-let ctx=c.getContext("2d");
-
-c.width=800;
-c.height=300;
-
-banks.forEach((b,i)=>{
-ctx.fillRect(i*25,300-b.fdr*20,20,b.fdr*20);
-});
-</script>
-
-<footer>Created by Sadab</footer>
-
-</body>
-</html>
