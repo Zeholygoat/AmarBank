@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advisor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<div class="container nav">
+<div class="logo">
+<div class="logo-dot"></div>
+<h2>AmarBank</h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="advisor.html" class="active">Advisor</a>
+<a href="compare.html">Compare</a>
+<a href="insights.html">Insights</a>
+</nav>
+</div>
+</header>
+
+<div class="toggle" onclick="toggleMode()">☀</div>
+
+<main class="container">
+
+<div class="card advisor-panel">
+<h3>Smart Advisor</h3>
+
+<select id="role" class="big-select">
+<option value="student">Student</option>
+<option value="pro">Professional</option>
+<option value="nrb">NRB</option>
+</select>
+
+<select id="priority" class="big-select">
+<option value="interest">High Interest</option>
+<option value="tech">Technology</option>
+<option value="cards">Cards</option>
+</select>
+
+<button class="analyze-btn" onclick="run()">Analyze Best Banks</button>
+
+<div class="progress">
+<div id="bar" class="progress-bar"></div>
+</div>
+
+</div>
+
+<div id="results"></div>
+
+</main>
+
+<footer class="footer">Created by Sadab</footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle('light');
+}
+</script>
+
+<script type="module" src="advisor.js"></script>
+
+</body>
+</html>

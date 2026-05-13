@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<div class="container nav">
+<div class="logo">
+<div class="logo-dot"></div>
+<h2>AmarBank</h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="advisor.html">Advisor</a>
+<a href="compare.html">Compare</a>
+<a href="insights.html" class="active">Insights</a>
+</nav>
+</div>
+</header>
+
+<div class="toggle" onclick="toggleMode()">☀</div>
+
+<main class="container">
+
+<div class="card">
+<canvas id="chart"></canvas>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Top FDR Rate</h3>
+<p class="ai-score">10.7%</p>
+</div>
+
+<div class="card">
+<h3>Average Industry FDR</h3>
+<p class="ai-score" id="stats"></p>
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">Insights Dashboard</footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle('light');
+}
+</script>
+
+<script type="module" src="insights.js"></script>
+
+</body>
+</html>

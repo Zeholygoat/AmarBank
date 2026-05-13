@@ -1,0 +1,42 @@
+export const banks = [
+{
+name:"City Bank",
+fdr:10.5,
+tech:9,
+cards:10,
+atm:7,
+type:["pro","women"],
+bestFor:"Cards",
+website:"https://www.thecitybank.com"
+},
+{
+name:"DBBL",
+fdr:9.5,
+tech:9,
+cards:6,
+atm:10,
+type:["student","all"],
+bestFor:"ATM",
+website:"https://www.dutchbanglabank.com"
+},
+{
+name:"BRAC Bank",
+fdr:10.2,
+tech:8,
+cards:8,
+atm:8,
+type:["pro","women"],
+bestFor:"Service",
+website:"https://www.bracbank.com"
+},
+{
+name:"EBL",
+fdr:10,
+tech:9,
+cards:9,
+atm:7,
+type:["pro","student"],
+bestFor:"Travel",
+website:"https://www.ebl.com.bd"
+}
+];

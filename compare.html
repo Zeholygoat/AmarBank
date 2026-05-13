@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<div class="container nav">
+<div class="logo">
+<div class="logo-dot"></div>
+<h2>AmarBank</h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="advisor.html">Advisor</a>
+<a href="compare.html" class="active">Compare</a>
+<a href="insights.html">Insights</a>
+</nav>
+</div>
+</header>
+
+<div class="toggle" onclick="toggleMode()">☀</div>
+
+<main class="container">
+
+<input type="text" id="search" placeholder="Search banks..." class="search-box">
+
+<div class="card table-card">
+<table id="t"></table>
+</div>
+
+</main>
+
+<footer class="footer">AmarBank Compare</footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle('light');
+}
+</script>
+
+<script type="module" src="compare.js"></script>
+
+</body>
+</html>

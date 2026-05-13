@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmarBank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      <h2>AmarBank</h2>
+    </div>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="advisor.html">Advisor</a>
+      <a href="compare.html">Compare</a>
+      <a href="insights.html">Insights</a>
+    </nav>
+  </div>
+</header>
+
+<div class="toggle" onclick="toggleMode()">☀</div>
+
+<main class="container">
+<section class="hero">
+
+<div class="hero-text">
+<h2>
+Financial Intelligence <br>
+<span class="gradient">for Bangladesh</span>
+</h2>
+
+<p>
+AmarBank uses smart recommendation algorithms to help users discover the best banks.
+</p>
+
+<div class="hero-buttons">
+<a href="advisor.html"><button class="btn btn-primary">Launch Advisor</button></a>
+<a href="compare.html"><button class="btn btn-secondary">Compare Banks</button></a>
+</div>
+</div>
+
+<div class="hero-card">
+<h3>AI Financial Snapshot</h3>
+
+<div class="metric-grid">
+<div class="metric">
+<h3>30+</h3>
+<p>Banks</p>
+</div>
+
+<div class="metric">
+<h3>98%</h3>
+<p>Accuracy</p>
+</div>
+
+<div class="metric">
+<h3>10.7%</h3>
+<p>Top FDR</p>
+</div>
+
+<div class="metric">
+<h3>24/7</h3>
+<p>Insights</p>
+</div>
+</div>
+</div>
+
+</section>
+</main>
+
+<footer class="footer">
+AmarBank Platform
+</footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle('light');
+}
+</script>
+
+</body>
+</html>
