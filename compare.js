@@ -1,9 +1,9 @@
-
 import { banks } from './data.js';
-
-const t = document.getElementById("table");
-
-t.innerHTML = `
+const t = document.getElementById("t");
+const search = document.getElementById("search");
+function render(data){
+t.innerHTML =
+`
 <tr>
 <th>Bank</th>
 <th>FDR</th>
@@ -12,10 +12,11 @@ t.innerHTML = `
 <th>ATM</th>
 <th>Best For</th>
 </tr>
-`;
-
-banks.forEach(b=>{
-t.innerHTML += `
+`
+;
+data.forEach(b=>{
+t.innerHTML +=
+`
 <tr>
 <td>${b.name}</td>
 <td>${b.fdr}%</td>
@@ -24,4 +25,12 @@ t.innerHTML += `
 <td>${b.atm}/10</td>
 <td>${b.bestFor}</td>
 </tr>`;
+  });
+}
+render(banks);
+search.addEventListener('input',()=>{
+const filtered = banks.filter(b=>
+b.name.toLowerCase().includes(search.value.toLowerCase())
+);
+render(filtered);
 });
